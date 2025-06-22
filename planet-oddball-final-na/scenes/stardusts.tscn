@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://egjlrp6fbjhh"]
+[gd_scene load_steps=7 format=3 uid="uid://egjlrp6fbjhh"]
 
 [ext_resource type="Script" uid="uid://dxv7x2eoh1nv8" path="res://scripts/stardusts.gd" id="1_r3q4f"]
 [ext_resource type="Texture2D" uid="uid://df31i3hfqvati" path="res://artassets/spritesheet-tiles-default.png" id="1_vlj1j"]
@@ -7,11 +7,18 @@
 atlas = ExtResource("1_vlj1j")
 region = Rect2(640, 320, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_02qpt"]
+atlas = ExtResource("1_vlj1j")
+region = Rect2(960, 448, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_02qpt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r3q4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02qpt")
 }],
 "loop": true,
 "name": &"stardust",
@@ -28,6 +35,7 @@ script = ExtResource("1_r3q4f")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_02qpt")
 animation = &"stardust"
+autoplay = "stardust"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gpnxd")

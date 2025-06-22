@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="planet-oddball-final-na"
-run/main_scene="uid://bk3ccvhd1yqpn"
+run/main_scene="uid://da5gqna2hsrkg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
