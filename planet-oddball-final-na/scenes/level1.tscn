@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bk3ccvhd1yqpn"]
+[gd_scene load_steps=8 format=3 uid="uid://bk3ccvhd1yqpn"]
 
 [ext_resource type="PackedScene" uid="uid://0tqjm03gj13a" path="res://scenes/player.tscn" id="1_g2h75"]
 [ext_resource type="Texture2D" uid="uid://df31i3hfqvati" path="res://artassets/spritesheet-tiles-default.png" id="2_wwpf4"]
+[ext_resource type="PackedScene" uid="uid://egjlrp6fbjhh" path="res://scenes/stardusts.tscn" id="3_m7ahb"]
+[ext_resource type="PackedScene" uid="uid://dvtwjb0yykxn" path="res://scenes/killzone.tscn" id="4_dwgg1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwpf4"]
 texture = ExtResource("2_wwpf4")
@@ -24,6 +26,7 @@ texture_region_size = Vector2i(64, 64)
 9:0/0 = 0
 9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.8928, -31.0461, 31.8928, -32.175, 32.4572, 32.175, -31.8928, 33.304)
 10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.8928, -31.0461, 31.8928, -32.175, 32.4572, 32.175, -31.8928, 33.304)
 11:0/0 = 0
 12:0/0 = 0
 13:0/0 = 0
@@ -497,6 +500,7 @@ texture_region_size = Vector2i(64, 64)
 9:7/0 = 0
 9:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.8928, -31.0461, 31.8928, -32.175, 32.4572, 32.175, -31.8928, 33.304)
 10:7/0 = 0
+10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.8928, -31.0461, 31.8928, -32.175, 32.4572, 32.175, -31.8928, 33.304)
 11:7/0 = 0
 12:7/0 = 0
 13:7/0 = 0
@@ -563,6 +567,7 @@ texture_region_size = Vector2i(64, 64)
 9:8/0 = 0
 9:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.8928, -31.0461, 31.8928, -32.175, 32.4572, 32.175, -31.8928, 33.304)
 10:8/0 = 0
+10:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.8928, -31.0461, 31.8928, -32.175, 32.4572, 32.175, -31.8928, 33.304)
 11:8/0 = 0
 12:8/0 = 0
 13:8/0 = 0
@@ -980,6 +985,7 @@ texture_region_size = Vector2i(64, 64)
 13:14/0 = 0
 14:14/0 = 0
 15:14/0 = 0
+15:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.8928, -31.0461, 31.8928, -32.175, 32.4572, 32.175, -31.8928, 33.304)
 16:14/0 = 0
 17:14/0 = 0
 18:14/0 = 0
@@ -1055,6 +1061,7 @@ texture_region_size = Vector2i(64, 64)
 13:15/0 = 0
 14:15/0 = 0
 15:15/0 = 0
+15:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.8928, -31.0461, 31.8928, -32.175, 32.4572, 32.175, -31.8928, 33.304)
 16:15/0 = 0
 17:15/0 = 0
 18:15/0 = 0
@@ -1122,6 +1129,7 @@ texture_region_size = Vector2i(64, 64)
 13:16/0 = 0
 14:16/0 = 0
 15:16/0 = 0
+15:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.8928, -31.0461, 31.8928, -32.175, 32.4572, 32.175, -31.8928, 33.304)
 16:16/0 = 0
 17:16/0 = 0
 18:16/0 = 0
@@ -1192,6 +1200,7 @@ texture_region_size = Vector2i(64, 64)
 13:17/0 = 0
 14:17/0 = 0
 15:17/0 = 0
+15:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.8928, -31.0461, 31.8928, -32.175, 32.4572, 32.175, -31.8928, 33.304)
 16:17/0 = 0
 17:17/0 = 0
 18:17/0 = 0
@@ -4583,15 +4592,41 @@ texture_region_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_wwpf4")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ru4tf"]
+
 [node name="levelone" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(582, 704)
+tile_set = SubResource("TileSet_m7ahb")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131076, 458752, 7, -196608, 458752, 3, -196596, 458752, 3, -196600, 458752, 7, -196588, 458752, 7, -196584, 458752, 3, 327714, 524288, 3, 327718, 524288, 3, 327722, 524288, 3, 327726, 524288, 3, 327730, 524288, 3, 327734, 524288, 1, 327710, 524288, 268435457, 65590, 458752, 13, 65566, 458752, 268435469, 65570, 458752, 15, 65574, 458752, 15, 65578, 458752, 15, 65582, 458752, 15, 65586, 458752, 15, -196578, 983040, 13, -196575, 983040, 13, -196572, 983040, 13, -458731, 917504, 1, -196569, 983040, 13, 65594, 983040, 14, 65598, 983040, 14, 65602, 983040, 14, 65606, 983040, 14, 65610, 458752, 14, 65614, 458752, 15, 65618, 458752, 268435470, 327758, 524288, 3, 327754, 524288, 2, 327762, 524288, 268435458, -196555, 655360, 10, -458730, 917504, 0, -458728, 917504, 1, -196522, 524288, 4, -393126, 524288, 4, -589730, 524288, 4, -851870, 524288, 4, -1114010, 524288, 268435457, -1114006, 524288, 3, -1114002, 524288, 3, -1113998, 524288, 3, -1113994, 524288, 268435458, -1376138, 458752, 13, -1376154, 458752, 268435469, -1376150, 458752, 15, -1376146, 458752, 15, -1376142, 458752, 15, -1703821, 983040, 0, -1638285, 983040, 1, -458744, 720896, 2, -1638298, 720896, 1, -1638291, 655360, 12, -655326, 458752, 10, -655322, 458752, 9, -655318, 458752, 268435466, -982991, 458752, 10, -982987, 458752, 9, -982983, 458752, 268435466, -1310656, 458752, 10, -1310652, 458752, 9, -1310648, 458752, 268435466, -1638321, 458752, 10, -1638317, 458752, 9, -1638313, 458752, 268435466, 196666, 0, 268435460, 262202, 0, 268435461, 196670, 0, 268435460, 262206, 0, 268435461, 196674, 0, 268435460, 262210, 0, 268435461, 196678, 0, 268435460, 262214, 0, 268435461, -131080, 524288, 268435458, -131084, 524288, 2, -393228, 458752, 17, -655372, 458752, 17, -917516, 458752, 17, -1179660, 458752, 17, -393224, 458752, 268435473, -655368, 458752, 268435473, -917512, 458752, 268435473, -1179656, 458752, 268435473, -1441804, 458752, 14, -1441800, 458752, 268435470, -1900461, 917504, 16, -196550, 917504, 17, -196546, 917504, 17, -196542, 917504, 17, -196538, 917504, 17, -1441716, 983040, 15, -1114052, 983040, 15, -786387, 983040, 15, -1245131, 851968, 14)
 
 [node name="Player" parent="." instance=ExtResource("1_g2h75")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(550, 561)
+position = Vector2(555, 518)
+zoom = Vector2(2, 2)
+limit_bottom = 900
+position_smoothing_enabled = true
 
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2(562, 689)
-tile_set = SubResource("TileSet_m7ahb")
-format = 2
-layer_0/tile_data = PackedInt32Array(-131076, 458752, 7, -196608, 458752, 3, -196596, 458752, 3, -196600, 458752, 7, -196588, 458752, 7, -196584, 458752, 3)
+[node name="stardust1" parent="." instance=ExtResource("3_m7ahb")]
+position = Vector2(1327, 663)
+
+[node name="stardust2" parent="." instance=ExtResource("3_m7ahb")]
+position = Vector2(1812, 664)
+
+[node name="stardust3" parent="." instance=ExtResource("3_m7ahb")]
+position = Vector2(1209, 488)
+
+[node name="stardust4" parent="." instance=ExtResource("3_m7ahb")]
+position = Vector2(1656, 328)
+
+[node name="stardust5" parent="." instance=ExtResource("3_m7ahb")]
+position = Vector2(2159, 436)
+
+[node name="killzone" parent="." instance=ExtResource("4_dwgg1")]
+position = Vector2(943, 786)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+shape = SubResource("WorldBoundaryShape2D_ru4tf")

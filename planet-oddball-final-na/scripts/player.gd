@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
 const SPEED = 180.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta):
-	# Add gravity if not on the floor
+	# Gravity if not on the floor
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -16,7 +16,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get horizontal direction input
+	# Horizontal direction input
 	var direction = Input.get_axis("ui_left", "ui_right")
 
 	# Flip sprite based on direction
