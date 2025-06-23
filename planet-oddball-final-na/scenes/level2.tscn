@@ -1,17 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://bk3ccvhd1yqpn"]
+[gd_scene load_steps=14 format=3 uid="uid://wv0h6i4mccb3"]
 
-[ext_resource type="Script" uid="uid://bt8mgv8wfhnh0" path="res://scripts/game_manager.gd" id="1_bbk5w"]
-[ext_resource type="PackedScene" uid="uid://0tqjm03gj13a" path="res://scenes/player.tscn" id="1_g2h75"]
-[ext_resource type="Texture2D" uid="uid://bbd5f244fkoxc" path="res://artassets/spritesheet-backgrounds-default.png" id="2_ru4tf"]
-[ext_resource type="Texture2D" uid="uid://df31i3hfqvati" path="res://artassets/spritesheet-tiles-default.png" id="2_wwpf4"]
-[ext_resource type="PackedScene" uid="uid://egjlrp6fbjhh" path="res://scenes/stardusts.tscn" id="3_m7ahb"]
-[ext_resource type="PackedScene" uid="uid://dvtwjb0yykxn" path="res://scenes/killzone.tscn" id="4_dwgg1"]
-[ext_resource type="PackedScene" uid="uid://bx14keb35c147" path="res://scenes/mouse.tscn" id="6_6sh32"]
-[ext_resource type="FontFile" uid="uid://4mh7ewt6srit" path="res://artassets/Cute Dino.ttf" id="7_ejswk"]
-[ext_resource type="PackedScene" uid="uid://mx7a4nl0wwq6" path="res://scenes/hud.tscn" id="9_conm7"]
+[ext_resource type="Script" uid="uid://bt8mgv8wfhnh0" path="res://scripts/game_manager.gd" id="1_xa7n4"]
+[ext_resource type="Texture2D" uid="uid://df31i3hfqvati" path="res://artassets/spritesheet-tiles-default.png" id="2_bo4dx"]
+[ext_resource type="Texture2D" uid="uid://bbd5f244fkoxc" path="res://artassets/spritesheet-backgrounds-default.png" id="3_76toy"]
+[ext_resource type="FontFile" uid="uid://4mh7ewt6srit" path="res://artassets/Cute Dino.ttf" id="4_8g4ke"]
+[ext_resource type="PackedScene" uid="uid://0tqjm03gj13a" path="res://scenes/player.tscn" id="5_56gwk"]
+[ext_resource type="PackedScene" uid="uid://egjlrp6fbjhh" path="res://scenes/stardusts.tscn" id="6_ve5ok"]
+[ext_resource type="PackedScene" uid="uid://dvtwjb0yykxn" path="res://scenes/killzone.tscn" id="7_cleqw"]
+[ext_resource type="PackedScene" uid="uid://bx14keb35c147" path="res://scenes/mouse.tscn" id="8_wvb8j"]
+[ext_resource type="PackedScene" uid="uid://mx7a4nl0wwq6" path="res://scenes/hud.tscn" id="9_g8vcy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwpf4"]
-texture = ExtResource("2_wwpf4")
+texture = ExtResource("2_bo4dx")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -4594,7 +4594,7 @@ texture_region_size = Vector2i(64, 64)
 67:71/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6sh32"]
-texture = ExtResource("2_ru4tf")
+texture = ExtResource("3_76toy")
 32:16/size_in_atlas = Vector2i(16, 16)
 32:16/0 = 0
 0:32/size_in_atlas = Vector2i(16, 16)
@@ -4611,7 +4611,7 @@ sources/1 = SubResource("TileSetAtlasSource_6sh32")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_bbk5w")
+script = ExtResource("1_xa7n4")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(582, 704)
@@ -4631,7 +4631,7 @@ offset_right = 657.0
 offset_bottom = 414.0
 scale = Vector2(2.12, 2.12)
 theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
-theme_override_fonts/font = ExtResource("7_ejswk")
+theme_override_fonts/font = ExtResource("4_8g4ke")
 text = "{SPACE} to jump"
 
 [node name="Label3" type="Label" parent="Labels"]
@@ -4641,7 +4641,7 @@ offset_right = 1617.0
 offset_bottom = 532.0
 scale = Vector2(2.12, 2.12)
 theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
-theme_override_fonts/font = ExtResource("7_ejswk")
+theme_override_fonts/font = ExtResource("4_8g4ke")
 text = "Evade the monsters"
 
 [node name="Label4" type="Label" parent="Labels"]
@@ -4651,7 +4651,7 @@ offset_right = 1168.0
 offset_bottom = 443.0
 scale = Vector2(2.12, 2.12)
 theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
-theme_override_fonts/font = ExtResource("7_ejswk")
+theme_override_fonts/font = ExtResource("4_8g4ke")
 text = "Collect stardusts"
 horizontal_alignment = 1
 
@@ -4662,7 +4662,7 @@ offset_right = 1903.0
 offset_bottom = 142.0
 scale = Vector2(2.12, 2.12)
 theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
-theme_override_fonts/font = ExtResource("7_ejswk")
+theme_override_fonts/font = ExtResource("4_8g4ke")
 text = "Use levers to open exits"
 horizontal_alignment = 1
 
@@ -4673,10 +4673,10 @@ offset_right = 707.0
 offset_bottom = 458.0
 scale = Vector2(2.12, 2.12)
 theme_override_colors/font_color = Color(0, 0.372549, 0, 1)
-theme_override_fonts/font = ExtResource("7_ejswk")
+theme_override_fonts/font = ExtResource("4_8g4ke")
 text = "← → to move  "
 
-[node name="Player" parent="." instance=ExtResource("1_g2h75")]
+[node name="Player" parent="." instance=ExtResource("5_56gwk")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(555, 518)
@@ -4684,32 +4684,32 @@ zoom = Vector2(1.8, 1.8)
 limit_bottom = 900
 position_smoothing_enabled = true
 
-[node name="stardust1" parent="." instance=ExtResource("3_m7ahb")]
+[node name="stardust1" parent="." instance=ExtResource("6_ve5ok")]
 position = Vector2(1288, 664)
 
-[node name="stardust2" parent="." instance=ExtResource("3_m7ahb")]
+[node name="stardust2" parent="." instance=ExtResource("6_ve5ok")]
 position = Vector2(1792, 663)
 
-[node name="stardust3" parent="." instance=ExtResource("3_m7ahb")]
+[node name="stardust3" parent="." instance=ExtResource("6_ve5ok")]
 position = Vector2(1642, 331)
 
-[node name="stardust4" parent="." instance=ExtResource("3_m7ahb")]
+[node name="stardust4" parent="." instance=ExtResource("6_ve5ok")]
 position = Vector2(1190, 494)
 
-[node name="stardust5" parent="." instance=ExtResource("3_m7ahb")]
+[node name="stardust5" parent="." instance=ExtResource("6_ve5ok")]
 position = Vector2(2156, 441)
 
-[node name="killzone" parent="." instance=ExtResource("4_dwgg1")]
+[node name="killzone" parent="." instance=ExtResource("7_cleqw")]
 position = Vector2(943, 786)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(0, -56)
 shape = SubResource("WorldBoundaryShape2D_ru4tf")
 
-[node name="mouse" parent="." instance=ExtResource("6_6sh32")]
+[node name="mouse" parent="." instance=ExtResource("8_wvb8j")]
 position = Vector2(1886, 667)
 
-[node name="HUD" parent="." instance=ExtResource("9_conm7")]
+[node name="HUD" parent="." instance=ExtResource("9_g8vcy")]
 
 [connection signal="body_entered" from="stardust1" to="HUD" method="_on_stardust_1_body_entered"]
 [connection signal="body_entered" from="stardust2" to="HUD" method="_on_stardust_1_body_entered"]
