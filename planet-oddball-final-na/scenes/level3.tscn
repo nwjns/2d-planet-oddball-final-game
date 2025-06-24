@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://wpil8hqlxskt"]
+[gd_scene load_steps=25 format=3 uid="uid://wpil8hqlxskt"]
 
 [ext_resource type="Script" uid="uid://bt8mgv8wfhnh0" path="res://scripts/game_manager.gd" id="1_5mhml"]
 [ext_resource type="Texture2D" uid="uid://df31i3hfqvati" path="res://artassets/spritesheet-tiles-default.png" id="2_rupth"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dvtwjb0yykxn" path="res://scenes/killzone.tscn" id="6_bradm"]
 [ext_resource type="PackedScene" uid="uid://mx7a4nl0wwq6" path="res://scenes/hud.tscn" id="7_got4s"]
 [ext_resource type="PackedScene" uid="uid://f5ykv1dtasf6" path="res://scenes/platforms.tscn" id="8_5mhml"]
+[ext_resource type="PackedScene" uid="uid://cf3e7x1kxawgp" path="res://scenes/lastenemy.tscn" id="9_rupth"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwpf4"]
 texture = ExtResource("2_rupth")
@@ -4618,9 +4619,24 @@ sources/1 = SubResource("TileSetAtlasSource_6sh32")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ru4tf"]
 
-[sub_resource type="Animation" id="Animation_5mhml"]
-resource_name = "move_right"
-length = 2.0
+[sub_resource type="Animation" id="Animation_qewby"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2129, -116)]
+}
+
+[sub_resource type="Animation" id="Animation_fh4ka"]
+resource_name = "move_left"
+length = 4.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -4629,10 +4645,16 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1175, 77), Vector2(1413, 77)]
+"values": [Vector2(2129, -116), Vector2(1549, -116)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bradm"]
+_data = {
+&"RESET": SubResource("Animation_qewby"),
+&"move_left": SubResource("Animation_fh4ka")
 }
 
 [sub_resource type="Animation" id="Animation_rupth"]
@@ -4649,6 +4671,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1936, 151)]
+}
+
+[sub_resource type="Animation" id="Animation_5mhml"]
+resource_name = "move_right"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1175, 77), Vector2(1413, 77)]
 }
 
 [sub_resource type="Animation" id="Animation_6qt4k"]
@@ -4675,9 +4714,8 @@ _data = {
 &"move_right2": SubResource("Animation_6qt4k")
 }
 
-[sub_resource type="Animation" id="Animation_fh4ka"]
-resource_name = "move_left"
-length = 4.0
+[sub_resource type="Animation" id="Animation_got4s"]
+length = 3.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -4686,14 +4724,16 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 1.97, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2129, -116), Vector2(1549, -116)]
+"values": [Vector2(2863, 192), Vector2(2235, 318), Vector2(1853, 524), Vector2(1617, 657)]
 }
 
-[sub_resource type="Animation" id="Animation_qewby"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_bradm"]
+resource_name = "bee zigzag"
+length = 10.0
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -4701,16 +4741,20 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.99, 1.98, 2.98, 3.98, 4.99, 6.01, 7.02, 8, 8.98, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2129, -116)]
+"values": [Vector2(2863, 593), Vector2(2571, 315), Vector2(2356, 598), Vector2(2172, 336), Vector2(1870, 621), Vector2(1620, 383), Vector2(1391, 588), Vector2(1094, 470), Vector2(943, 586), Vector2(474, 230), Vector2(212, 511)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bradm"]
+[sub_resource type="Animation" id="Animation_e40mx"]
+resource_name = "bee2zigzag"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e40mx"]
 _data = {
-&"RESET": SubResource("Animation_qewby"),
-&"move_left": SubResource("Animation_fh4ka")
+&"RESET": SubResource("Animation_got4s"),
+&"bee zigzag": SubResource("Animation_bradm"),
+&"bee2zigzag": SubResource("Animation_e40mx")
 }
 
 [node name="leveltwo" type="Node2D"]
@@ -4763,44 +4807,64 @@ shape = SubResource("WorldBoundaryShape2D_ru4tf")
 
 [node name="HUD" parent="." instance=ExtResource("7_got4s")]
 
-[node name="Platform" parent="." instance=ExtResource("8_5mhml")]
-position = Vector2(1038, 338)
+[node name="Platforms" type="Node" parent="."]
 
-[node name="Platform2" parent="." instance=ExtResource("8_5mhml")]
-position = Vector2(1936, 151)
+[node name="Platform7" parent="Platforms" instance=ExtResource("8_5mhml")]
+position = Vector2(2129, -116)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform7"]
 libraries = {
-&"": SubResource("AnimationLibrary_6qt4k")
+&"": SubResource("AnimationLibrary_bradm")
 }
-autoplay = "move_right"
+autoplay = "move_left"
 
-[node name="Platform3" parent="." instance=ExtResource("8_5mhml")]
-position = Vector2(1033, 76)
-
-[node name="Platform4" parent="." instance=ExtResource("8_5mhml")]
-position = Vector2(1033, 204)
-
-[node name="Platform5" parent="." instance=ExtResource("8_5mhml")]
+[node name="Platform5" parent="Platforms" instance=ExtResource("8_5mhml")]
 position = Vector2(1936, 151)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform5"]
 libraries = {
 &"": SubResource("AnimationLibrary_6qt4k")
 }
 autoplay = "move_right2"
 
-[node name="Platform6" parent="." instance=ExtResource("8_5mhml")]
+[node name="Platform6" parent="Platforms" instance=ExtResource("8_5mhml")]
 position = Vector2(2261, 9)
 
-[node name="Platform7" parent="." instance=ExtResource("8_5mhml")]
-position = Vector2(2129, -116)
+[node name="Platform4" parent="Platforms" instance=ExtResource("8_5mhml")]
+position = Vector2(1033, 204)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform7"]
+[node name="Platform3" parent="Platforms" instance=ExtResource("8_5mhml")]
+position = Vector2(1033, 76)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("8_5mhml")]
+position = Vector2(1936, 151)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2"]
 libraries = {
-&"": SubResource("AnimationLibrary_bradm")
+&"": SubResource("AnimationLibrary_6qt4k")
 }
-autoplay = "move_left"
+autoplay = "move_right"
+
+[node name="Platform" parent="Platforms" instance=ExtResource("8_5mhml")]
+position = Vector2(1038, 338)
+
+[node name="Bee" parent="." instance=ExtResource("9_rupth")]
+position = Vector2(2863, 192)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bee"]
+libraries = {
+&"": SubResource("AnimationLibrary_e40mx")
+}
+autoplay = "bee zigzag"
+
+[node name="Bee2" parent="." instance=ExtResource("9_rupth")]
+position = Vector2(2863, 192)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bee2"]
+libraries = {
+&"": SubResource("AnimationLibrary_e40mx")
+}
+autoplay = "bee zigzag"
 
 [connection signal="body_entered" from="stardust1" to="HUD" method="_on_stardust_1_body_entered"]
 [connection signal="body_entered" from="stardust2" to="HUD" method="_on_stardust_1_body_entered"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://cf3e7x1kxawgp"]
+
+[ext_resource type="Script" uid="uid://neob3a5uudeq" path="res://scenes/bee.gd" id="1_ixhve"]
+[ext_resource type="Texture2D" uid="uid://c6u3yrlf8133h" path="res://artassets/spritesheet-enemies-default.png" id="2_bg3qo"]
+[ext_resource type="PackedScene" uid="uid://dvtwjb0yykxn" path="res://scenes/killzone.tscn" id="3_aofqh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixhve"]
+atlas = ExtResource("2_bg3qo")
+region = Rect2(192, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg3qo"]
+atlas = ExtResource("2_bg3qo")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j7mu1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixhve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg3qo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lbrf4"]
+height = 47.8037
+
+[node name="Bee" type="Node2D"]
+script = ExtResource("1_ixhve")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j7mu1")
+autoplay = "default"
+frame_progress = 0.893562
+
+[node name="killzone" parent="." instance=ExtResource("3_aofqh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(0, 7)
+rotation = 7.87321
+shape = SubResource("CapsuleShape2D_lbrf4")
+
+[node name="RayCastUp" type="RayCast2D" parent="."]
+position = Vector2(0, 2)
+target_position = Vector2(0, -51)
+
+[node name="RayCastDown" type="RayCast2D" parent="."]
+position = Vector2(1, 1)
+target_position = Vector2(-1, 40)
