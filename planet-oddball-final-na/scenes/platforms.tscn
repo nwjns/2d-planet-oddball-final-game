@@ -1,8 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://f5ykv1dtasf6"]
+[gd_scene load_steps=3 format=3 uid="uid://f5ykv1dtasf6"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yvq4m"]
+[ext_resource type="Texture2D" uid="uid://df31i3hfqvati" path="res://artassets/spritesheet-tiles-default.png" id="1_byowd"]
 
-[node name="AnimatableBody2D" type="AnimatableBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnpiv"]
+size = Vector2(128, 52)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_yvq4m")
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(419, 327)
+texture = ExtResource("1_byowd")
+region_enabled = true
+region_rect = Rect2(577.197, 128.346, 62.3621, 62.819)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(482, 327)
+texture = ExtResource("1_byowd")
+region_enabled = true
+region_rect = Rect2(576.116, -0.206978, 63.9692, 63.5012)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(452, 321)
+shape = SubResource("RectangleShape2D_pnpiv")
+one_way_collision = true
