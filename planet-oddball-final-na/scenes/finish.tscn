@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq141td2n7b85"]
+[gd_scene load_steps=9 format=3 uid="uid://cq141td2n7b85"]
 
 [ext_resource type="Script" uid="uid://cyilt1agc0qf0" path="res://scripts/finish.gd" id="1_2pftv"]
 [ext_resource type="Texture2D" uid="uid://u704x18woopc" path="res://artassets/bg.jpg" id="2_n8g1v"]
 [ext_resource type="FontFile" uid="uid://4mh7ewt6srit" path="res://artassets/Cute Dino.ttf" id="3_q7jsg"]
+[ext_resource type="AudioStream" uid="uid://do4qry8qaropb" path="res://artassets/music/synth.wav" id="4_m504p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbgi4"]
 texture = ExtResource("2_n8g1v")
@@ -38,6 +39,7 @@ layout_mode = 0
 offset_right = 1154.0
 offset_bottom = 653.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_tbgi4")
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 z_index = 1
@@ -94,6 +96,10 @@ theme_override_fonts/font = ExtResource("3_q7jsg")
 theme_override_font_sizes/font_size = 50
 text = "You've collected the stardusts!"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_m504p")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_mainmenu_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exitiana_pressed"]
