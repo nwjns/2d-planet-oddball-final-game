@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cf3e7x1kxawgp"]
 
-[ext_resource type="Script" uid="uid://neob3a5uudeq" path="res://scenes/bee.gd" id="1_ixhve"]
+[ext_resource type="Script" uid="uid://neob3a5uudeq" path="res://scripts/bee.gd" id="1_ixhve"]
 [ext_resource type="Texture2D" uid="uid://c6u3yrlf8133h" path="res://artassets/spritesheet-enemies-default.png" id="2_bg3qo"]
 [ext_resource type="PackedScene" uid="uid://dvtwjb0yykxn" path="res://scenes/killzone.tscn" id="3_aofqh"]
 

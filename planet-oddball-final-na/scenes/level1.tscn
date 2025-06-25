@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://4mh7ewt6srit" path="res://artassets/Cute Dino.ttf" id="7_ejswk"]
 [ext_resource type="PackedScene" uid="uid://mx7a4nl0wwq6" path="res://scenes/hud.tscn" id="9_conm7"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwpf4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_conm7"]
 texture = ExtResource("2_wwpf4")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
@@ -4593,7 +4593,7 @@ texture_region_size = Vector2i(64, 64)
 66:71/0 = 0
 67:71/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6sh32"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d3jkd"]
 texture = ExtResource("2_ru4tf")
 32:16/size_in_atlas = Vector2i(16, 16)
 32:16/0 = 0
@@ -4604,8 +4604,8 @@ texture = ExtResource("2_ru4tf")
 
 [sub_resource type="TileSet" id="TileSet_m7ahb"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_wwpf4")
-sources/1 = SubResource("TileSetAtlasSource_6sh32")
+sources/0 = SubResource("TileSetAtlasSource_conm7")
+sources/1 = SubResource("TileSetAtlasSource_d3jkd")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ru4tf"]
 
