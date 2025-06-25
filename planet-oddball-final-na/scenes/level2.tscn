@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c67kfqnyp6ncm"]
+[gd_scene load_steps=15 format=3 uid="uid://c67kfqnyp6ncm"]
 
 [ext_resource type="Script" uid="uid://bt8mgv8wfhnh0" path="res://scripts/game_manager.gd" id="1_xa7n4"]
 [ext_resource type="Texture2D" uid="uid://df31i3hfqvati" path="res://artassets/spritesheet-tiles-default.png" id="2_bo4dx"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b04ik4emhii3d" path="res://scenes/jumpingslime.tscn" id="8_hrcei"]
 [ext_resource type="PackedScene" uid="uid://mx7a4nl0wwq6" path="res://scenes/hud.tscn" id="9_g8vcy"]
 [ext_resource type="PackedScene" uid="uid://b5drhxaatd2e8" path="res://scenes/next_level.tscn" id="9_xa7n4"]
+[ext_resource type="AudioStream" uid="uid://cbccbvt3km7k3" path="res://artassets/music/Untitled 1.mp3" id="10_bo4dx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwpf4"]
 texture = ExtResource("2_bo4dx")
@@ -4675,6 +4676,11 @@ position = Vector2(1839, 566)
 
 [node name="slime4" parent="." instance=ExtResource("8_hrcei")]
 position = Vector2(764, 579)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1485, 427)
+stream = ExtResource("10_bo4dx")
+autoplay = true
 
 [connection signal="body_entered" from="stardust1" to="HUD" method="_on_stardust_1_body_entered"]
 [connection signal="body_entered" from="stardust2" to="HUD" method="_on_stardust_1_body_entered"]

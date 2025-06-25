@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://wpil8hqlxskt"]
+[gd_scene load_steps=27 format=3 uid="uid://wpil8hqlxskt"]
 
 [ext_resource type="Script" uid="uid://bt8mgv8wfhnh0" path="res://scripts/game_manager.gd" id="1_5mhml"]
 [ext_resource type="Texture2D" uid="uid://df31i3hfqvati" path="res://artassets/spritesheet-tiles-default.png" id="2_rupth"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://mx7a4nl0wwq6" path="res://scenes/hud.tscn" id="7_got4s"]
 [ext_resource type="PackedScene" uid="uid://f5ykv1dtasf6" path="res://scenes/platforms.tscn" id="8_5mhml"]
 [ext_resource type="PackedScene" uid="uid://cf3e7x1kxawgp" path="res://scenes/lastenemy.tscn" id="9_rupth"]
+[ext_resource type="AudioStream" uid="uid://c7gfpj4ogievg" path="res://artassets/music/Untitled 2.mp3" id="11_fh4ka"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwpf4"]
 texture = ExtResource("2_rupth")
@@ -4869,6 +4870,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_e40mx")
 }
 autoplay = "bee zigzag"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_fh4ka")
+autoplay = true
 
 [connection signal="body_entered" from="stardust1" to="HUD" method="_on_stardust_1_body_entered"]
 [connection signal="body_entered" from="stardust2" to="HUD" method="_on_stardust_1_body_entered"]

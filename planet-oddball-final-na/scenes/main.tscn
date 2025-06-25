@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://da5gqna2hsrkg"]
+[gd_scene load_steps=10 format=3 uid="uid://da5gqna2hsrkg"]
 
 [ext_resource type="Script" uid="uid://0brriaxr1wnp" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="FontFile" uid="uid://4mh7ewt6srit" path="res://artassets/Cute Dino.ttf" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://u704x18woopc" path="res://artassets/bg.jpg" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://csyhfv4mlnyjy" path="res://artassets/planetodd.svg" id="3_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://do4qry8qaropb" path="res://artassets/music/synth.wav" id="5_tbgi4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbgi4"]
 texture = ExtResource("1_sugp2")
@@ -81,6 +82,11 @@ text = "Quit"
 [node name="Planetodd" type="Sprite2D" parent="."]
 position = Vector2(584, 260)
 texture = ExtResource("3_jyhfs")
+
+[node name="synth" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tbgi4")
+autoplay = true
+bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exit_pressed"]
